@@ -1,20 +1,14 @@
 import React from 'react';
 import { View, Pressable, StyleSheet, Text } from 'react-native';
-import { TextInput } from 'react-native-paper'; 
+import { TextInput } from 'react-native-paper';
 
 interface ListInputProps {
   input: string;
   setInput: (text: string) => void;
   addItem: () => void;
 }
-interface Item {
-  id: string;
-  name: string;
-  crossed?: boolean;
-}
 
-
-export default function ListInput({ input, setInput, addItem }: ListInputProps) {
+export default function ListGiveInput({ input, setInput, addItem }: ListInputProps) {
   return (
     <View style={styles.inputRow}>
       <TextInput
@@ -22,7 +16,7 @@ export default function ListInput({ input, setInput, addItem }: ListInputProps) 
         value={input}
         onChangeText={setInput}
         placeholder="Enter task"
-        placeholderTextColor="#888" 
+        placeholderTextColor="#888"
         underlineColor="transparent"
       />
       <Pressable onPress={addItem}>
@@ -36,7 +30,7 @@ const styles = StyleSheet.create({
   inputRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: 0,
     width: '90%',
   },
   input: {
